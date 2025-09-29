@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
+body{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
 #centerTitle{
     text-align: center;
     font-size: 4rem;
@@ -10,5 +16,19 @@
 
 #searchZone{
     margin-top: 1rem;
-    text-align: center;
+    width: 30vw;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #E8DFCA;
+    background-color: #F5EFE6;
+    padding: 5px;
+}
+
+button{
+    width: 8vw;
+}
+
+#buttons{
+    font-size: 20px;
 }
