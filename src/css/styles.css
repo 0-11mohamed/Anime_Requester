@@ -23,18 +23,25 @@
 }
 
 #cardZone{
-    border: 2px solid red;
-
+    /*border: 2px solid red;*/
     margin: 5%;
 }
 
 .card{
-    border: 2px solid blue;
     width: 70vw;
+
+    border: 2px solid rgb(104, 104, 104);
+    border-radius: 1%;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+
 }
 
 .card img{
     width: 100%;
+}
+
+.card p{
+    background-color: red;
 }
 
 button{
