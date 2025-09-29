@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+#centerTitle{
+    text-align: center;
+    font-size: 4rem;
+    margin: 0 auto;
+    font-family: Outfit;
+    font-weight: 600;
+}
+
+#searchZone{
+    margin-top: 1rem;
+    text-align: center;
+}
