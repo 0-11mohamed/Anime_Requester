@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-body{
-    align-items: center;
+.flex-col-center{
     display: flex;
+    align-items: center;
     flex-direction: column;
 }
 
 #centerTitle{
-    text-align: center;
     font-size: 4rem;
     margin: 0 auto;
     font-family: Outfit;
     font-weight: 600;
+    text-align: center;
 }
 
 #searchZone{
@@ -29,3 +29,18 @@ button{
     width: 8vw;
 }
 
+
+#cardZone{
+    border: 2px solid red;
+
+    margin: 5%;
+}
+
+.card{
+    border: 2px solid blue;
+    width: 70vw;
+}
+
+.card img{
+    width: 100%;
+}
