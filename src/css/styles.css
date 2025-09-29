@@ -16,6 +16,10 @@
 
 #searchZone{
     margin-top: 1rem;
+    width: 30vw;
+    border: 3px solid #E8DFCA;
+    background-color: #F5EFE6;
+    padding: 5px;
 }
 
 #cardZone{
@@ -31,4 +35,8 @@
 
 .card img{
     width: 100%;
+}
+
+button{
+    width: 8vw;
 }
