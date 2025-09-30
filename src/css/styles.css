@@ -44,10 +44,10 @@
     height: auto;
 }
 
-.card p{
-    background-color: red;
-}
-
 button{
     width: 8vw;
+}
+
+ul{
+    background-color: aqua;
 }
