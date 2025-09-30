@@ -13,7 +13,12 @@
 
         <div id="searchZone">
             <div id="typeZone">
-                <input type="search" id="query" name="q" placeholder="Search...">
+                <select id="filter">
+                    <option value="title">Nom</option>
+                    <option value="genre">Catégorie/Genre</option>
+                    <option value="rank">Classement</option>
+                    <option value="episodes">Nombre d'épisodes</option>
+                </select>
                 <button>Effacer</button>
             </div>
 
@@ -22,6 +27,7 @@
                 <button>Rechercher</button>
             </div>
         </div>
+
 
         <div id="cardZone" class="flex-col-center">
             <p>carte zone</p>

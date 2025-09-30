@@ -25,10 +25,18 @@
     padding: 5px;
 }
 
-button{
+button {
     width: 8vw;
 }
 
+
+#filter, #query{
+    width: 18vw;
+}
+
+#typeZone{
+    margin-bottom: 5px;
+}
 
 #cardZone{
     border: 2px solid red;
