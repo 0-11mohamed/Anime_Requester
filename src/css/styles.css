@@ -29,15 +29,19 @@
 
 .card{
     width: 70vw;
+    max-width: 300px;
 
     border: 2px solid rgb(104, 104, 104);
     border-radius: 1%;
     box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
 
+    padding: 5px;
+    margin-bottom: 10px;
 }
 
 .card img{
     width: 100%;
+    height: auto;
 }
 
 .card p{
