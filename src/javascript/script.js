@@ -1,5 +1,28 @@
 
-const url = 'https://anime-db.p.rapidapi.com/anime?page=1&size=10&search=jojo';
+let url = 'url'; 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const filter = document.getElementById('filter');
+  const query = document.getElementById('query');
+  const delButton = document.getElementById('delButton');
+  const searchButton = document.getElementById('searchButton');
+
+  delButton.addEventListener('click', () => {
+      query.value = ""; 
+  });
+
+  searchButton.addEventListener('click', (event) => {
+    const filterValue = filter.value;
+    const queryText = query.value;
+
+
+    console.log("Filtre :", filterValue);
+    console.log("Texte :", queryText);
+
+    fetchAnime(filterValue, queryText);
+  });
+});
+
 
 const options = {
 	method: 'GET',
@@ -9,15 +32,35 @@ const options = {
 	}
 };
 
-function editURL(){
+function editURL(filterValue, queryText) {
+    switch(filterValue) {
+        case 'title':
+            url = 'https://anime-db.p.rapidapi.com/anime?page=1&size=10&search=' + queryText.trim() + '&sortBy=ranking&sortOrder=asc';
+            break;
+        case 'id':
+            url = 'https://anime-db.p.rapidapi.com/anime/by-id/' + queryText.trim();
+            break;
+        case 'rank':
+            url = 'https://anime-db.p.rapidapi.com/anime/by-ranking/' + queryText.trim();
+            break;
+        default:
+            url = 'https://anime-db.p.rapidapi.com/anime?page=1&size=10';
+    }
+  }
 
-}
-
-const container = document.getElementById("cardZone");
-const template = document.getElementById("cardTemplate");
-
-async function fetchAnime() {
+async function fetchAnime(filterValue, queryText) {
   try {
+
+    const container = document.getElementById("cardZone");
+    const template = document.getElementById("cardTemplate");
+
+    Array.from(container.children).forEach(child => {
+        if (child.tagName.toLowerCase() !== 'template') {
+          child.remove();
+        }
+      });
+
+    editURL(filterValue, queryText);
 
     const response = await fetch(url, options);
     const jsonData = await response.json();
@@ -45,5 +88,3 @@ async function fetchAnime() {
     console.error("Erreur lors du fetch :", error);
   }
 }
-
-fetchAnime();
