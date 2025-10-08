@@ -16,10 +16,22 @@
 
 #searchZone{
     margin-top: 1rem;
-    width: 30vw;
+    width: 320px;
     border: 3px solid #E8DFCA;
     background-color: #F5EFE6;
     padding: 5px;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+#searchZone div{
+    width: 100%;
+    
+    display: flex;
+}
+#searchZone div *{
+    width: 50%;
 }
 
 #cardZone{
@@ -44,14 +56,6 @@
     height: auto;
 }
 
-button{
-    width: 8vw;
-}
-
 ul{
     background-color: aqua;
-}
-
-input{
-    width: 70px;
 }

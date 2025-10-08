@@ -11,17 +11,24 @@
     <body class="flex-col-center">
         <p id="centerTitle">Anime Finder</p>
 
-        <div id="searchZone" class="flex-col-center">
+        
+        <div id="searchZone">
             <div id="typeZone">
-                <input type="search" id="query" name="q" placeholder="Search...">
+                <select id="filter">
+                    <option value="title">Nom</option>
+                    <option value="genre">Catégorie/Genre</option>
+                    <option value="rank">Classement</option>
+                    <option value="episodes">Nombre d'épisodes</option>
+                </select>
                 <button>Effacer</button>
             </div>
 
             <div id="writeZone">
-                <input type="search" id="query" name="q" placeholder="Search...">
-                <button id="research">Rechercher</button>
+                <input type="search" id="query" placeholder="Rechercher...">
+                <button>Rechercher</button>
             </div>
         </div>
+
 
         <div id="cardZone" class="flex-col-center">
 

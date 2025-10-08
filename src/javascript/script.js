@@ -1,6 +1,5 @@
-const fs = require("fs");
 
-const url = 'https://anime-db.p.rapidapi.com/anime?page=1&size=10&search=vinland';
+const url = 'https://anime-db.p.rapidapi.com/anime?page=1&size=10&search=jojo';
 
 const options = {
 	method: 'GET',
@@ -14,13 +13,33 @@ function editURL(){
 
 }
 
+const container = document.getElementById("cardZone");
+const template = document.getElementById("cardTemplate");
+
 async function fetchAnime() {
   try {
-    //editURL();
-    const response = await fetch(url, options);
-    const result = await response.json();
 
-    let jsonData = JSON.parse
+    const response = await fetch(url, options);
+    const jsonData = await response.json();
+
+    jsonData.data.forEach(anime => {
+
+        const clone = template.content.cloneNode(true);
+        clone.querySelector("#cardTitle").textContent = anime.title;
+        clone.querySelector("#cardSynopsis").textContent = anime.synopsis;
+        clone.querySelector("#cardEpisodes").textContent = anime.episodes;
+        clone.querySelector("#cardImg").src = anime.image;
+        if(anime.hasRanking == true){
+            clone.querySelector("#cardClass").textContent = anime.ranking;
+        } else {
+            clone.querySelector("#cardClass").textContent = "No ranking";
+        }
+
+        clone.querySelector("#cardGenre").textContent = anime.genres;
+        
+        container.appendChild(clone);
+
+    });
 
   } catch (error) {
     console.error("Erreur lors du fetch :", error);
