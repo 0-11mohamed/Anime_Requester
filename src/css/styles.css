@@ -51,3 +51,7 @@ button{
 ul{
     background-color: aqua;
 }
+
+input{
+    width: 70px;
+}
