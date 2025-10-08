@@ -24,17 +24,20 @@
         </div>
 
         <div id="cardZone" class="flex-col-center">
-            <p>carte zone</p>
-            <div class="card" class="flex-col-center">
-                <p id="cardTitle">Titre anime</p>
-                <img src="assets/testCard.jpg">
-                <p>Synopsis: </p>
-                <p>Genre: x</p>
-                <p>Classement: x</p>
-                <p>Nombre d'episodes: x</p>
-            </div>
+
+            <template id="cardTemplate">
+                <div class="card" class="flex-col-center">
+                    <p>Titre : <span id="cardTitle"></span></p>
+                    <img id="cardImg" src="assets/testCard.jpg">
+                    <p>Synopsis: <span id="cardSynopsis"></span></p>
+                    <p>Genre: <span id="cardGenre"></span></p>
+                    <p>Classement: <span id="cardClass"></span></p>
+                    <p>Nombre d'episodes: <span id="cardEpisodes"></span></p>
+                </div>
+            </template>
+
         </div>
-        <ul id="anime-list"></ul>
+
         <script src="src/javascript/script.js"></script>
     </body>
 </html>

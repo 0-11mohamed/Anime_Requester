@@ -19,14 +19,8 @@ async function fetchAnime() {
     //editURL();
     const response = await fetch(url, options);
     const result = await response.json();
-    
-    fs.writeFile("test.json", JSON.stringify(result, null, 2), (error) => {
-      if (error) {
-        console.error("Erreur d ecriture :", error);
-        throw error;
-      }
-      console.log("Donnees sauvegardees dans test.json");
-    });
+
+    let jsonData = JSON.parse
 
   } catch (error) {
     console.error("Erreur lors du fetch :", error);
