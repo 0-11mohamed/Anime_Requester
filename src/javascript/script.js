@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
 const options = {
 	method: 'GET',
 	headers: {
@@ -48,6 +47,25 @@ function editURL(filterValue, queryText) {
   }
 }
 
+function renderCard(anime, template, container) {
+  const clone = template.content.cloneNode(true);
+  clone.querySelector("#cardTitle").textContent = anime.title;
+  clone.querySelector("#cardSynopsis").textContent = anime.synopsis;
+  clone.querySelector("#cardEpisodes").textContent = anime.episodes;
+  clone.querySelector("#cardImg").src = anime.image;
+  
+  if (anime.hasRanking === true) {
+      clone.querySelector("#cardClass").textContent = anime.ranking;
+  } else {
+      clone.querySelector("#cardClass").textContent = "No ranking";
+  }
+
+  clone.querySelector("#cardGenre").textContent = anime.genres;
+
+  container.appendChild(clone);
+}
+
+
 async function fetchAnime(filterValue, queryText) {
   try {
 
@@ -64,25 +82,20 @@ async function fetchAnime(filterValue, queryText) {
 
     const response = await fetch(url, options);
     const jsonData = await response.json();
-
-    jsonData.data.forEach(anime => {
-
-        const clone = template.content.cloneNode(true);
-        clone.querySelector("#cardTitle").textContent = anime.title;
-        clone.querySelector("#cardSynopsis").textContent = anime.synopsis;
-        clone.querySelector("#cardEpisodes").textContent = anime.episodes;
-        clone.querySelector("#cardImg").src = anime.image;
-        if(anime.hasRanking == true){
-            clone.querySelector("#cardClass").textContent = anime.ranking;
-        } else {
-            clone.querySelector("#cardClass").textContent = "No ranking";
-        }
-
-        clone.querySelector("#cardGenre").textContent = anime.genres;
-        
-        container.appendChild(clone);
-
-    });
+    
+    if (jsonData.data && Array.isArray(jsonData.data) && jsonData.data.length > 0) {
+      jsonData.data.forEach(anime => {
+        renderCard(anime, template, container);
+      });
+    } else if (jsonData && typeof jsonData === 'object' && jsonData.title) {
+      
+      renderCard(jsonData, template, container);
+    } else {
+      const message = document.createElement("p");
+      message.textContent = "Aucun anime trouvé pour cette recherche.";
+      container.appendChild(message);
+    }
+    
 
   } catch (error) {
     console.error("Erreur lors du fetch :", error);
