@@ -35,10 +35,10 @@ function editURL(filterValue, queryText) {
           url = 'https://anime-db.p.rapidapi.com/anime?page=1&size=10&search=' + queryText.trim() + '&sortBy=ranking&sortOrder=asc';
           break;
       case 'id':
-          url = 'https://anime-db.p.rapidapi.com/anime/by-id/' + queryText.trim();
+          url = 'https://anime-db.p.rapidapi.com/anime/by-id/' + parseInt(queryText, 10);
           break;
       case 'rank':
-          url = 'https://anime-db.p.rapidapi.com/anime/by-ranking/' + queryText.trim();
+          url = 'https://anime-db.p.rapidapi.com/anime/by-ranking/' + queryText;
           break;
       default:
           url = 'https://anime-db.p.rapidapi.com/anime?page=1&size=10';
