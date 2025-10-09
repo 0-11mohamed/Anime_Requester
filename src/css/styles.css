@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> version_stable
 .flex-col-center{
     display: flex;
     align-items: center;
@@ -16,6 +20,7 @@
 
 #searchZone{
     margin-top: 1rem;
+<<<<<<< HEAD
     width: 30vw;
     align-items: center;
     display: flex;
@@ -36,19 +41,54 @@ button {
 
 #typeZone{
     margin-bottom: 5px;
+=======
+    width: 320px;
+    border: 3px solid #E8DFCA;
+    background-color: #F5EFE6;
+    padding: 5px;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+#searchZone div{
+    width: 100%;
+    
+    display: flex;
+}
+#searchZone div *{
+    width: 50%;
+>>>>>>> version_stable
 }
 
 #cardZone{
-    border: 2px solid red;
-
+    /*border: 2px solid red;*/
     margin: 5%;
 }
 
 .card{
-    border: 2px solid blue;
     width: 70vw;
+    max-width: 700px;
+
+    border: 2px solid rgb(104, 104, 104);
+    border-radius: 1%;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+
+    padding: 5px;
+    margin-bottom: 10px;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 }
 
 .card img{
     width: 100%;
+<<<<<<< HEAD
+=======
+    max-width: 300px;
+    height: auto;
+}
+
+ul{
+    background-color: aqua;
+>>>>>>> version_stable
 }

@@ -11,34 +11,37 @@
     <body class="flex-col-center">
         <p id="centerTitle">Anime Finder</p>
 
+        
         <div id="searchZone">
             <div id="typeZone">
                 <select id="filter">
-                    <option value="title">Nom</option>
-                    <option value="genre">Catégorie/Genre</option>
+                    <option value="id">Identifiant</option>
                     <option value="rank">Classement</option>
-                    <option value="episodes">Nombre d'épisodes</option>
+                    <option value="title">Nom</option>
                 </select>
-                <button>Effacer</button>
+                <button id="delButton">Effacer</button>
             </div>
 
             <div id="writeZone">
-                <input type="search" id="query" name="q" placeholder="Search...">
-                <button>Rechercher</button>
+                <input type="search" id="query" placeholder="Rechercher...">
+                <button id="searchButton">Rechercher</button>
             </div>
         </div>
 
 
         <div id="cardZone" class="flex-col-center">
-            <p>carte zone</p>
-            <div class="card" class="flex-col-center">
-                <p id="cardTitle">Titre anime</p>
-                <img src="assets/testCard.jpg">
-                <p>Synopsis: </p>
-                <p>Genre: x</p>
-                <p>Classement: x</p>
-                <p>Nombre d'episodes: x</p>
-            </div>
+
+            <template id="cardTemplate">
+                <div class="card flex-col-center">
+                    <p>Titre : <span id="cardTitle"></span></p>
+                    <img id="cardImg" src="assets/testCard.jpg">
+                    <p>Synopsis: <span id="cardSynopsis"></span></p>
+                    <p>Genre: <span id="cardGenre"></span></p>
+                    <p>Classement: <span id="cardClass"></span></p>
+                    <p>Nombre d'episodes: <span id="cardEpisodes"></span></p>
+                </div>
+            </template>
+
         </div>
 
         <script src="src/javascript/script.js"></script>
