@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-<<<<<<< HEAD
-=======
 
->>>>>>> version_stable
 .flex-col-center{
     display: flex;
     align-items: center;
@@ -20,28 +17,6 @@
 
 #searchZone{
     margin-top: 1rem;
-<<<<<<< HEAD
-    width: 30vw;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    border: 3px solid #E8DFCA;
-    background-color: #F5EFE6;
-    padding: 5px;
-}
-
-button {
-    width: 8vw;
-}
-
-
-#filter, #query{
-    width: 18vw;
-}
-
-#typeZone{
-    margin-bottom: 5px;
-=======
     width: 320px;
     border: 3px solid #E8DFCA;
     background-color: #F5EFE6;
@@ -58,7 +33,6 @@ button {
 }
 #searchZone div *{
     width: 50%;
->>>>>>> version_stable
 }
 
 #cardZone{
@@ -82,13 +56,10 @@ button {
 
 .card img{
     width: 100%;
-<<<<<<< HEAD
-=======
     max-width: 300px;
     height: auto;
 }
 
 ul{
     background-color: aqua;
->>>>>>> version_stable
 }
