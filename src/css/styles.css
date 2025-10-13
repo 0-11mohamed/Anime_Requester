@@ -5,6 +5,7 @@ body {
     position: relative;
     min-height: 100vh;
     overflow-x: hidden;
+    
   }
   
   body::before {
@@ -28,7 +29,20 @@ body {
     body::before {
       background-image: url('/assets/backMobile.png');
     }
-  }
+}
+
+.light{
+    color: black;
+}
+.dark{
+    color: #c9c9c9;
+    background-color: black;
+}
+body.dark #searchZone div *{
+    background-color: #2c2c2c;
+    background: linear-gradient(120deg, #2b2b2b, #3a3a3a);
+    color: #c9c9c9;
+}
 
 .flex-col-center{
     display: flex;
@@ -66,7 +80,6 @@ body {
 }
 #searchZone div *{
     width: 50%;
-    background: linear-gradient(to right, white, rgb(204, 204, 204));
     border: 2px solid rgb(104, 104, 104);
     border-radius: 5px;
     margin: 3px;
@@ -85,8 +98,8 @@ body {
     border-radius: 10px;
     box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
 
-    background-color: rgb(185, 185, 185);
-    background: linear-gradient(to right, white, beige);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+    backdrop-filter: blur(10px);
 
     padding: 5px;
     margin-bottom: 10px;
@@ -100,6 +113,60 @@ body {
     height: auto;
 }
 
-ul{
-    background-color: aqua;
+/*-------------TOGGLE---------------*/
+
+#toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 60px;
+  height: 30px;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+.checkbox-label i {
+  color: #464646;
+  font-size: 14px;
+  z-index: 1;
+}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.checkbox:checked + .checkbox-label {
+  background-color: #464646;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(30px);
 }
