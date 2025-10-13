@@ -2,7 +2,9 @@
 
 body {
     margin: 0;
+    position: relative;
     min-height: 100vh;
+    overflow-x: hidden;
   }
   
   body::before {
@@ -12,13 +14,14 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('https://media-cdn.tripadvisor.com/media/photo-s/17/e8/99/a8/traditional-drinks-zaezae.jpg');
+    background-image: url('./assets/back.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     filter: blur(6px);
     opacity: 0.5;
     z-index: -1;
+    pointer-events: none;
   }
   
   @media (max-width: 768px) {
