@@ -2,9 +2,7 @@
 
 body {
     margin: 0;
-    position: relative;
     min-height: 100vh;
-    overflow-x: hidden;
   }
   
   body::before {
@@ -21,7 +19,6 @@ body {
     filter: blur(6px);
     opacity: 0.5;
     z-index: -1;
-    pointer-events: none;
   }
   
   @media (max-width: 768px) {
