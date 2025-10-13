@@ -1,5 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
+body {
+    margin: 0;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/assets/back.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(6px);
+    opacity: 0.5;
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  @media (max-width: 768px) {
+    body::before {
+      background-image: url('/assets/backMobile.png');
+    }
+  }
 
 .flex-col-center{
     display: flex;
@@ -8,6 +37,7 @@
 }
 
 #centerTitle{
+    max-width: 80vw;
     font-size: 4rem;
     margin: 0 auto;
     font-family: Outfit;
@@ -18,8 +48,11 @@
 #searchZone{
     margin-top: 1rem;
     width: 320px;
-    border: 3px solid #E8DFCA;
-    background-color: #F5EFE6;
+
+    border: 2px solid rgb(104, 104, 104);
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+
     padding: 5px;
     
     display: flex;
@@ -33,6 +66,10 @@
 }
 #searchZone div *{
     width: 50%;
+    background: linear-gradient(to right, white, rgb(204, 204, 204));
+    border: 2px solid rgb(104, 104, 104);
+    border-radius: 5px;
+    margin: 3px;
 }
 
 #cardZone{
@@ -45,8 +82,11 @@
     max-width: 700px;
 
     border: 2px solid rgb(104, 104, 104);
-    border-radius: 1%;
+    border-radius: 10px;
     box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+
+    background-color: rgb(185, 185, 185);
+    background: linear-gradient(to right, white, beige);
 
     padding: 5px;
     margin-bottom: 10px;
