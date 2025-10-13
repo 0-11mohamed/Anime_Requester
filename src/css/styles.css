@@ -14,7 +14,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('/assets/back.jpg'); /* image par défaut = desktop */
+    background-image: url('/assets/back.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -24,7 +24,6 @@ body {
     pointer-events: none;
   }
   
-  /* 📱 Sur mobile (écran max 768px), changer l’image */
   @media (max-width: 768px) {
     body::before {
       background-image: url('/assets/backMobile.png');
@@ -38,6 +37,7 @@ body {
 }
 
 #centerTitle{
+    max-width: 80vw;
     font-size: 4rem;
     margin: 0 auto;
     font-family: Outfit;
@@ -48,8 +48,11 @@ body {
 #searchZone{
     margin-top: 1rem;
     width: 320px;
-    border: 3px solid #E8DFCA;
-    background-color: #F5EFE6;
+
+    border: 2px solid rgb(104, 104, 104);
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+
     padding: 5px;
     
     display: flex;
@@ -63,6 +66,10 @@ body {
 }
 #searchZone div *{
     width: 50%;
+    background: linear-gradient(to right, white, rgb(204, 204, 204));
+    border: 2px solid rgb(104, 104, 104);
+    border-radius: 5px;
+    margin: 3px;
 }
 
 #cardZone{
@@ -75,7 +82,7 @@ body {
     max-width: 700px;
 
     border: 2px solid rgb(104, 104, 104);
-    border-radius: 1%;
+    border-radius: 10px;
     box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
 
     background-color: rgb(185, 185, 185);
