@@ -27,7 +27,7 @@ let apiKey = sessionStorage.getItem("apiKey");
     if (!apiKey) {
       apiKey = prompt("Veuillez entrer votre clé API :");
       if (apiKey && apiKey.trim() !== "") {
-        sessionStorageStorage.setItem("apiKey", apiKey.trim());
+        sessionStorage.setItem("apiKey", apiKey.trim());
       } else {
         alert("Aucune clé API saisie. Rechargez la page pour réessayer.");
       }
