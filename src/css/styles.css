@@ -126,6 +126,43 @@ body.dark #searchZone div *{
     height: auto;
 }
 
+#zoneGenres{
+
+  width: 320px;
+  height: 70px;
+
+  display:flex;
+
+  border: 2px solid rgb(104, 104, 104);
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+  padding: 2px;
+
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+
+}
+
+#zoneGenres p{
+  margin: 0;
+}
+
+
+#genreCheckboxes label {
+  width: 45%; 
+  white-space: nowrap;
+}
+
+#genreCheckboxes {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  gap: 5px;
+  box-sizing: border-box;
+}
+
 /*-------------TOGGLE---------------*/
 
 .switch {
