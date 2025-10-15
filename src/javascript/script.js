@@ -23,10 +23,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+let apiKey = sessionStorage.getItem("apiKey");
+    if (!apiKey) {
+      apiKey = prompt("Veuillez entrer votre clé API :");
+      if (apiKey && apiKey.trim() !== "") {
+        sessionStorageStorage.setItem("apiKey", apiKey.trim());
+      } else {
+        alert("Aucune clé API saisie. Rechargez la page pour réessayer.");
+      }
+    }
+    console.log("Clé API chargée :", apiKey);
+
 const options = {
 	method: 'GET',
 	headers: {
-		'x-rapidapi-key': '75b6251b0fmsh68cc306febf1b84p1a443fjsnff7449ddea1a',
+		'x-rapidapi-key': apiKey,
 		'x-rapidapi-host': 'anime-db.p.rapidapi.com'
 	}
 };
