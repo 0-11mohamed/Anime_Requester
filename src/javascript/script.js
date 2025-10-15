@@ -112,3 +112,10 @@ async function fetchAnime(filterValue, queryText) {
     console.error("Erreur lors du fetch :", error);
   }
 }
+
+//-----
+
+const checkbox = document.getElementById("checkbox")
+checkbox.addEventListener("change", () => {
+  document.body.classList.toggle("dark")
+})
