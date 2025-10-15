@@ -25,10 +25,10 @@ body {
     pointer-events: none;
   }
   
-  @media (max-width: 768px) {
-    body::before {
-      background-image: url('/assets/backMobile.png');
-    }
+@media (max-width: 768px) {
+  body::before {
+    background-image: url('/assets/backMobile.png');
+  }
 }
 
 .light{
@@ -115,58 +115,122 @@ body.dark #searchZone div *{
 
 /*-------------TOGGLE---------------*/
 
-#toggle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-  position: absolute;
-  top: 10px;
-  right: 0;
-}
-
-.checkbox {
-  opacity: 0;
-  position: absolute;
-}
-
-.checkbox-label {
-  background-color: #111;
-  width: 60px;
-  height: 30px;
-  border-radius: 50px;
+.switch {
+  font-size: 13px;
   position: relative;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 8px;
-  box-sizing: border-box;
-  transition: background-color 0.3s ease;
-}
+  display: inline-block;
+  width: 5em;
+  height: 2.5em;
+  user-select: none;
 
-.checkbox-label i {
-  color: #464646;
-  font-size: 14px;
-  z-index: 1;
-}
-
-.checkbox-label .ball {
-  background-color: #fff;
-  width: 24px;
-  height: 24px;
   position: absolute;
-  top: 3px;
-  left: 3px;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  right: 25px;
+  top: 30px;
 }
 
-.checkbox:checked + .checkbox-label {
-  background-color: #464646;
+/* Hide default HTML checkbox */
+.switch .cb {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.checkbox:checked + .checkbox-label .ball {
-  transform: translateX(30px);
+/* The slider */
+.toggle {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background-color: #373737;
+  border-radius: 0.1em;
+  transition: 0.4s;
+  text-transform: uppercase;
+  font-weight: 700;
+  overflow: hidden;
+  box-shadow: -0.3em 0 0 0 #373737, -0.3em 0.3em 0 0 #373737,
+    0.3em 0 0 0 #373737, 0.3em 0.3em 0 0 #373737, 0 0.3em 0 0 #373737;
+}
+
+.toggle > .left {
+  position: absolute;
+  display: flex;
+  width: 50%;
+  height: 88%;
+  background-color: #f3f3f3;
+  color: #373737;
+  left: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  transform-origin: right;
+  transform: rotateX(10deg);
+  transform-style: preserve-3d;
+  transition: all 150ms;
+}
+
+.left::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgb(206, 206, 206);
+  transform-origin: center left;
+  transform: rotateY(90deg);
+}
+
+.left::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgb(112, 112, 112);
+  transform-origin: center bottom;
+  transform: rotateX(90deg);
+}
+
+.toggle > .right {
+  position: absolute;
+  display: flex;
+  width: 50%;
+  height: 88%;
+  background-color: #f3f3f3;
+  color: rgb(206, 206, 206);
+  right: 1px;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  transform-origin: left;
+  transform: rotateX(10deg) rotateY(-45deg);
+  transform-style: preserve-3d;
+  transition: all 150ms;
+}
+
+.right::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgb(206, 206, 206);
+  transform-origin: center right;
+  transform: rotateY(-90deg);
+}
+
+.right::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgb(112, 112, 112);
+  transform-origin: center bottom;
+  transform: rotateX(90deg);
+}
+
+.switch input:checked + .toggle > .left {
+  transform: rotateX(10deg) rotateY(45deg);
+  color: rgb(206, 206, 206);
+}
+
+.switch input:checked + .toggle > .right {
+  transform: rotateX(10deg) rotateY(0deg);
+  color: #424242;
 }
